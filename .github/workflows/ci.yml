@@ -1,0 +1,16 @@
+name: GitHub Python CI
+on:
+  push:
+    branches: [main]
+    pull_request:
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Installer Python 
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+        - name: Exécuter le script
+          run python main.py
